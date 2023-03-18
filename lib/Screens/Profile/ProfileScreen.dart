@@ -30,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Icon(
                         Icons.favorite,
                         color: Color(0xff15433b),
-                        size: 40,
+                        size: 30,
                       ),
                       GestureDetector(
                         onTap: () {
@@ -41,7 +41,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Icon(
                           Icons.settings_outlined,
                           color: Color(0xffbbc1c8),
-                          size: 40,
+                          size: 30,
                         ),
                       ),
                     ],
