@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meditation_app/Screens/whiteMusicPlayer.dart';
+import 'package:meditation_app/Screens/MusicScreens/whiteMusicPlayer.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
