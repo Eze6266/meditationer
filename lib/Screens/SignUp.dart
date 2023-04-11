@@ -278,9 +278,8 @@ class _SignUpScreeState extends State<SignUpScree> {
               SizedBox(height: 10),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(PageAnimationTransition(
-                      page: OnBoardingScreen(),
-                      pageAnimationType: BottomToTopTransition()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => OnBoardingScreen()));
                 },
                 child: Container(
                   height: 53,

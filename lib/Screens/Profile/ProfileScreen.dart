@@ -34,9 +34,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(PageAnimationTransition(
-                              page: Settings(),
-                              pageAnimationType: BottomToTopTransition()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Settings()));
                         },
                         child: Icon(
                           Icons.settings_outlined,

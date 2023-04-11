@@ -807,9 +807,8 @@ class _LessonScreenState extends State<LessonScreen> {
                 SizedBox(height: 15),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(PageAnimationTransition(
-                        page: MusicStress(),
-                        pageAnimationType: BottomToTopTransition()));
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => MusicStress()));
                   },
                   child: Container(
                     width: 91 * size.width / 100,

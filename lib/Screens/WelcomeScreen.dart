@@ -125,9 +125,8 @@ class WelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 65),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(PageAnimationTransition(
-                        page: ScreenHandler(),
-                        pageAnimationType: BottomToTopTransition()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenHandler()));
                   },
                   child: Container(
                     height: 63,
