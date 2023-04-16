@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "796413076663",
+    "project_id": "indre-ro",
+    "storage_bucket": "indre-ro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796413076663:android:f9619f37b634c22ca79932",
+        "android_client_info": {
+          "package_name": "com.example.meditation_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796413076663-2h1fslmailcdrjbaid80nc15o4af1o3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB360Xf2zJ0Fp7ave8sGLfvlPUkAFU9xeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796413076663-2h1fslmailcdrjbaid80nc15o4af1o3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
