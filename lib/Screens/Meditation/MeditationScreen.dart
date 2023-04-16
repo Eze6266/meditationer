@@ -72,9 +72,8 @@ class _MeditationScreenState extends State<MeditationScreen> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(PageAnimationTransition(
-                              page: DarkMusicPlayer(),
-                              pageAnimationType: BottomToTopTransition()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => DarkMusicPlayer()));
                         },
                         child: MeditationCard(
                           imgUrl: 'assets/bird.png',

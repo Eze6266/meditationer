@@ -91,11 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).push(
-                                  PageAnimationTransition(
-                                      page: WhiteMusicPlayer(),
-                                      pageAnimationType:
-                                          BottomToTopTransition()));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => WhiteMusicPlayer()));
                             },
                             child: HomeContainers(
                               imgUrl: 'assets/fokus.png',

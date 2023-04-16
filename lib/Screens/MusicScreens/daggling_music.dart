@@ -73,9 +73,8 @@ class _DagglingMusicState extends State<DagglingMusic> {
               SizedBox(height: 100),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(PageAnimationTransition(
-                      page: DagliRo(),
-                      pageAnimationType: BottomToTopTransition()));
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => DagliRo()));
                 },
                 child: Image(
                   width: 230,

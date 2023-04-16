@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditation_app/Screens/OnboardingScreen.dart';
 import 'package:provider/provider.dart';
 
 import 'Screens/SplashScreen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SplashScreen(),
+        home: OnBoardingScreen(),
       ),
     );
   }

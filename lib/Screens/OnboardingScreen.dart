@@ -73,9 +73,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               padding: const EdgeInsets.only(left: 30, right: 30, bottom: 20),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(PageAnimationTransition(
-                      page: WelcomeScreen(),
-                      pageAnimationType: BottomToTopTransition()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => WelcomeScreen()));
                 },
                 child: Container(
                   height: 50,
@@ -115,9 +114,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   SizedBox(width: 4),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(PageAnimationTransition(
-                          page: HomeScreen(),
-                          pageAnimationType: BottomToTopTransition()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
                     },
                     child: Text(
                       'LOGG INN',
