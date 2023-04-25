@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meditation_app/Screens/OnboardingScreen.dart';
+import 'package:meditation_app/Screens/LoginScreen.dart';
+import 'package:meditation_app/Screens/SignUp.dart';
 import 'package:provider/provider.dart';
 
 import 'Screens/SplashScreen.dart';
@@ -29,11 +30,15 @@ class MyApp extends StatelessWidget {
     return Provider(
       create: (_) => Navigation(),
       child: MaterialApp(
+        routes: {
+          '/login':(context) => LoginScreen(),
+          '/signup':(context) => SignUpScree(),
+        },
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: OnBoardingScreen(),
+        home: SignUpScree(),
       ),
     );
   }
