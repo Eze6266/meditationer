@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
+import 'package:meditation_app/Screens/LoginScreen.dart';
+import 'package:meditation_app/Screens/SignUp.dart';
 import 'package:meditation_app/Screens/WelcomeScreen.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
@@ -74,7 +76,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => WelcomeScreen()));
+                      MaterialPageRoute(builder: (context) => SignUpScree()));
                 },
                 child: Container(
                   height: 50,
@@ -115,7 +117,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
+                          builder: (context) => LoginScreen()));
                     },
                     child: Text(
                       'LOGG INN',

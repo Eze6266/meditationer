@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meditation_app/Screens/Home/ScreensHandler.dart.dart';
+import 'package:meditation_app/Screens/OnboardingScreen.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
@@ -126,7 +127,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenHandler()));
+                        builder: (context) => OnBoardingScreen()));
                   },
                   child: Container(
                     height: 63,
