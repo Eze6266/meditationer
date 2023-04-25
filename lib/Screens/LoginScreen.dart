@@ -90,38 +90,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     width: 80 * size.width / 100,
                     height: 70,
-                    child: Flexible(
-                      child: TextField(
-                        cursorColor: Colors.black,
-                        maxLines: null,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xfff2f3f7),
-                          label: Text(
-                            'E-postadresse',
-                            style: TextStyle(
-                              color: Color(0xffa1a4b2),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'HelveticaNeue',
-                              letterSpacing: 0.4,
-                            ),
+                    child: TextField(
+                      cursorColor: Colors.black,
+                      maxLines: null,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xfff2f3f7),
+                        label: Text(
+                          'E-postadresse',
+                          style: TextStyle(
+                            color: Color(0xffa1a4b2),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'HelveticaNeue',
+                            letterSpacing: 0.4,
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xfff2f3f7),
-                              width: 2,
-                            ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xfff2f3f7),
+                            width: 2,
                           ),
-                          focusColor: Color.fromRGBO(25, 95, 167, 1),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xfff2f3f7),
-                              width: 2,
-                            ),
+                        ),
+                        focusColor: Color.fromRGBO(25, 95, 167, 1),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xfff2f3f7),
+                            width: 2,
                           ),
                         ),
                       ),
@@ -137,38 +135,36 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     width: 80 * size.width / 100,
                     height: 70,
-                    child: Flexible(
-                      child: TextField(
-                        cursorColor: Colors.black,
-                        maxLines: null,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Color(0xfff2f3f7),
-                          label: Text(
-                            'Password',
-                            style: TextStyle(
-                              color: Color(0xffa1a4b2),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'HelveticaNeue',
-                              letterSpacing: 0.4,
-                            ),
+                    child: TextField(
+                      cursorColor: Colors.black,
+                      maxLines: null,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xfff2f3f7),
+                        label: Text(
+                          'Password',
+                          style: TextStyle(
+                            color: Color(0xffa1a4b2),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'HelveticaNeue',
+                            letterSpacing: 0.4,
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xfff2f3f7),
-                              width: 2,
-                            ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xfff2f3f7),
+                            width: 2,
                           ),
-                          focusColor: Color.fromRGBO(25, 95, 167, 1),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xfff2f3f7),
-                              width: 2,
-                            ),
+                        ),
+                        focusColor: Color.fromRGBO(25, 95, 167, 1),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Color(0xfff2f3f7),
+                            width: 2,
                           ),
                         ),
                       ),

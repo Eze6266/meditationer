@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:meditation_app/Auth/firebase_auth_services.dart';
+import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
 import 'package:meditation_app/Screens/OnboardingScreen.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
@@ -282,7 +283,8 @@ class _SignUpScreeState extends State<SignUpScree> {
                     onTap: () {
                       if (_signUpKey.currentState!.validate() &&
                           isChecked == true) {
-                        Auth().createNewUser(emailController.text, passwordController.text, context);
+                        Auth().createNewUser(usernameController.text,emailController.text, passwordController.text, context);
+                        
                       }
                     },
                     child: Container(

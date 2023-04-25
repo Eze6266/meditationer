@@ -1,12 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
 
 class Auth {
   
-  void createNewUser( final String email, final String password, final BuildContext context)async{
+  void createNewUser( final String username,final String email, final String password, final BuildContext context)async{
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+      await addUser(username);
 
       Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
     } catch (e) {
