@@ -39,26 +39,25 @@ class _SignUpScreeState extends State<SignUpScree> {
                   Padding(
                     padding: EdgeInsets.only(left: 10, top: 20),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Material(
-                            borderRadius: BorderRadius.circular(100),
-                            elevation: 4,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(
-                                Icons.arrow_back,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 120,
-                        ),
+                        // GestureDetector(
+                        //   onTap: () {
+                        //     Navigator.pop(context);
+                        //   },
+                        //   child: Material(
+                        //     borderRadius: BorderRadius.circular(100),
+                        //     elevation: 4,
+                        //     child: Padding(
+                        //       padding: const EdgeInsets.all(8.0),
+                        //       child: Icon(
+                        //         Icons.arrow_back,
+                        //         color: Colors.black,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                       
                         Image(
                           image: AssetImage('assets/greenflower.png'),
                         ),
