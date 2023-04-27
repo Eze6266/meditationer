@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:meditation_app/utils/usernameProvider.dart';
+import 'package:provider/provider.dart';
 
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 final FirebaseAuth auth = FirebaseAuth.instance;
@@ -22,7 +24,7 @@ Future<void> addUser(String username) async {
   );
 }
 
-Future<String> getUsername() async {
+Future<String> getUsername(BuildContext context) async {
   if (user == null) {
     throw FirebaseAuthException(
         code: 'not_authenticated',
@@ -39,6 +41,8 @@ Future<String> getUsername() async {
   if (username == null) {
     throw Exception('Username not found');
   }
+
+  Provider.of<UsernameProvider>(context, listen: false).addUserName(username);
 
   return username;
 }

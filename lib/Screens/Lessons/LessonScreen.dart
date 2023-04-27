@@ -125,56 +125,8 @@ class _LessonScreenState extends State<LessonScreen> {
                         ),
                       ),
                       SizedBox(width: 12),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            alle = false;
-                            sove = false;
-                            historie = false;
-                            ming = true;
-                            engste = false;
-                          });
-                        },
-                        child: Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 65,
-                                width: 65,
-                                decoration: BoxDecoration(
-                                  color: ming
-                                      ? Color(0xff236559)
-                                      : Color(0xffa0a3b1),
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                child: Center(
-                                  child: Image(
-                                    color: Colors.white,
-                                    image: AssetImage('assets/love.png'),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 5),
-                              Align(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Min',
-                                  style: TextStyle(
-                                    color: ming
-                                        ? Color(0xff3f414e)
-                                        : Color(0xffa0a3b1),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: 'HelveticaNeue',
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 12),
+                      
+                      
                       GestureDetector(
                         onTap: () {
                           setState(() {

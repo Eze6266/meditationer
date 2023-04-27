@@ -2,9 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/MusicScreens/whiteMusicPlayer.dart';
+import 'package:meditation_app/Screens/focus.dart';
+import 'package:meditation_app/utils/usernameProvider.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -15,8 +19,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    getUsername(context);
+    
+  }
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final username =Provider.of<UsernameProvider>(context, listen: true).username;
     return Scaffold(
       backgroundColor: Color(0xff236559),
       body: Padding(
@@ -38,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hei Anna',
+                      'Hei $username',
                       style: GoogleFonts.montserrat(
                         textStyle: TextStyle(
                           color: Colors.white,
@@ -79,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: SingleChildScrollView(
@@ -92,13 +105,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           GestureDetector(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => WhiteMusicPlayer()));
+                                  builder: (context) => FocusScreen()));
                             },
                             child: HomeContainers(
                               imgUrl: 'assets/fokus.png',
                               titleText: 'Fokus',
                               categoryText: 'MEDITASJON',
-                              timeText: '3-10 MIN',
+                              
                             ),
                           ),
                           SizedBox(width: 8),
@@ -106,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             imgUrl: 'assets/yoga.png',
                             titleText: 'Yoga',
                             categoryText: 'MEDITASJON',
-                            timeText: '3-10 MIN',
+                            
                           ),
                         ],
                       ),
@@ -114,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
                 child: Row(
@@ -124,14 +137,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       imgUrl: 'assets/angst.png',
                       titleText: 'Angst',
                       categoryText: 'MEDITASJON',
-                      timeText: '2-5 MIN',
+                      
                     ),
                     SizedBox(width: 8),
                     HomeContainers(
                       imgUrl: 'assets/vek.png',
                       titleText: 'Vekst',
                       categoryText: 'MEDITASJON',
-                      timeText: '5-10 MIN',
+                      
                     ),
                   ],
                 ),
@@ -141,122 +154,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-    // return Padding(
-    //   padding: const EdgeInsets.only(top: 18.0),
-    //   child: Container(
-    //     height: double.infinity,
-    //     width: double.infinity,
-    //     decoration: BoxDecoration(
-
-    //       image: DecorationImage(
-    //         image: AssetImage('assets/home.png'),
-    //         fit: BoxFit.cover,
-    //       ),
-    //     ),
-    //     child: Scaffold(
-    //       backgroundColor: Colors.transparent,
-    //       body: Padding(
-    //         padding: const EdgeInsets.only(top: 20.0),
-    //         child: Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //           children: [
-    //             Padding(
-    //               padding: const EdgeInsets.only(left: 42),
-    //               child: Column(
-    //                 crossAxisAlignment: CrossAxisAlignment.start,
-    //                 children: [
-    //                   Text(
-    //                     'Hei Anna',
-    //                     style: GoogleFonts.montserrat(
-    //                       textStyle: TextStyle(
-    //                         color: Colors.white,
-    //                         fontSize: 28,
-    //                         fontWeight: FontWeight.w600,
-    //                       ),
-    //                     ),
-    //                   ),
-    //                   SizedBox(height: 14),
-    //                   Text(
-    //                     'Vi ønsker deg en fin dag',
-    //                     style: GoogleFonts.montserrat(
-    //                       textStyle: TextStyle(
-    //                         color: Colors.white,
-    //                         fontSize: 18,
-    //                         fontWeight: FontWeight.w400,
-    //                         fontStyle: FontStyle.normal,
-    //                       ),
-    //                     ),
-    //                   )
-    //                 ],
-    //               ),
-    //             ),
-    //             SizedBox(height: 22 * size.height / 100),
-    //             Padding(
-    //               padding: EdgeInsets.only(left: 43),
-    //               child: Align(
-    //                 alignment: Alignment.centerLeft,
-    //                 child: Text(
-    //                   'Anbefalt',
-    //                   style: GoogleFonts.montserrat(
-    //                     textStyle: TextStyle(
-    //                       color: Colors.black,
-    //                       fontSize: 24,
-    //                       fontWeight: FontWeight.w500,
-    //                     ),
-    //                   ),
-    //                 ),
-    //               ),
-    //             ),
-    //             SizedBox(height: 20),
-    //             Padding(
-    //               padding: EdgeInsets.symmetric(horizontal: 8),
-    //               child: Row(
-    //                 mainAxisAlignment: MainAxisAlignment.center,
-    //                 children: [
-    //                   HomeContainers(
-    //                     imgUrl: 'assets/fokus.png',
-    //                     titleText: 'Fokus',
-    //                     categoryText: 'MEDITASJON',
-    //                     timeText: '3-10 MIN',
-    //                   ),
-    //                   SizedBox(width: 8),
-    //                   HomeContainers(
-    //                     imgUrl: 'assets/yoga.png',
-    //                     titleText: 'Yoga',
-    //                     categoryText: 'MEDITASJON',
-    //                     timeText: '3-10 MIN',
-    //                   ),
-    //                 ],
-    //               ),
-    //             ),
-    //             SizedBox(height: 20),
-    //             Padding(
-    //               padding: EdgeInsets.symmetric(horizontal: 8),
-    //               child: Row(
-    //                 mainAxisAlignment: MainAxisAlignment.center,
-    //                 children: [
-    //                   HomeContainers(
-    //                     imgUrl: 'assets/angst.png',
-    //                     titleText: 'Angst',
-    //                     categoryText: 'MEDITASJON',
-    //                     timeText: '2-5 MIN',
-    //                   ),
-    //                   SizedBox(width: 8),
-    //                   HomeContainers(
-    //                     imgUrl: 'assets/vek.png',
-    //                     titleText: 'Vekst',
-    //                     categoryText: 'MEDITASJON',
-    //                     timeText: '5-10 MIN',
-    //                   ),
-    //                 ],
-    //               ),
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // );
   }
 }
 
@@ -265,13 +162,13 @@ class HomeContainers extends StatelessWidget {
     super.key,
     required this.imgUrl,
     required this.categoryText,
-    required this.timeText,
+     this.timeText,
     required this.titleText,
   });
   String imgUrl;
   String titleText;
   String categoryText;
-  String timeText;
+  String? timeText;
 
   @override
   Widget build(BuildContext context) {
@@ -318,18 +215,7 @@ class HomeContainers extends StatelessWidget {
               ),
             ),
             SizedBox(width: 10),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '$timeText',
-                style: TextStyle(
-                  fontFamily: 'HelveticaNeue',
-                  color: Color(0xffA1A4B2),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
+            
           ],
         ),
       ],

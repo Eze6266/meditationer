@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:meditation_app/Auth/firebase_auth_services.dart';
+import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
+import 'package:meditation_app/Screens/Home/ScreensHandler.dart.dart';
 import 'package:meditation_app/Screens/LoginScreen.dart';
 import 'package:meditation_app/Screens/OnboardingScreen.dart';
 import 'package:meditation_app/Screens/SignUp.dart';
 import 'package:meditation_app/Screens/WelcomeScreen.dart';
+import 'package:meditation_app/utils/usernameProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -38,10 +41,16 @@ class MyApp extends StatelessWidget {
 
   MyApp({required this.isFirstTime});
   // This widget is the root of your application.
+
+  
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (_) => Navigation(),
+    
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UsernameProvider()),
+        ChangeNotifierProvider(create: (_) => Navigation()),
+      ],
       child: MaterialApp(
         routes: {
           '/login': (context) => LoginScreen(),
@@ -53,8 +62,8 @@ class MyApp extends StatelessWidget {
         ),
         home: isFirstTime
             ? WelcomeScreen()
-            : FirebaseAuth.instance.currentUser!=null
-                ? HomeScreen()
+            : FirebaseAuth.instance.currentUser != null
+                ? ScreenHandler()
                 : SignUpScree(),
       ),
     );

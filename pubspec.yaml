@@ -46,6 +46,7 @@ dependencies:
   firebase_auth: ^4.4.2
   cloud_firestore: ^4.5.2
   shared_preferences: ^2.1.0
+  audioplayers: ^0.20.1
   
 
 dev_dependencies:
