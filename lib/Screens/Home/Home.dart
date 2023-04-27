@@ -6,6 +6,7 @@ import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/MusicScreens/whiteMusicPlayer.dart';
 import 'package:meditation_app/Screens/angst.dart';
 import 'package:meditation_app/Screens/focus.dart';
+import 'package:meditation_app/Screens/yoga.dart';
 import 'package:meditation_app/utils/usernameProvider.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
@@ -116,11 +117,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           SizedBox(width: 8),
-                          HomeContainers(
-                            imgUrl: 'assets/yoga.png',
-                            titleText: 'Yoga',
-                            categoryText: 'MEDITASJON',
-                            
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => YogaScreen()));
+                            },
+                            child: HomeContainers(
+                              imgUrl: 'assets/yoga.png',
+                              titleText: 'Yoga',
+                              categoryText: 'MEDITASJON',
+                              
+                            ),
                           ),
                         ],
                       ),
