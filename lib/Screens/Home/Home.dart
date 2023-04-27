@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/MusicScreens/whiteMusicPlayer.dart';
+import 'package:meditation_app/Screens/angst.dart';
 import 'package:meditation_app/Screens/focus.dart';
 import 'package:meditation_app/utils/usernameProvider.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
@@ -133,11 +134,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    HomeContainers(
-                      imgUrl: 'assets/angst.png',
-                      titleText: 'Angst',
-                      categoryText: 'MEDITASJON',
-                      
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => AngstScreen()));
+                      },
+                      child: HomeContainers(
+                        imgUrl: 'assets/angst.png',
+                        titleText: 'Angst',
+                        categoryText: 'MEDITASJON',
+                        
+                      ),
                     ),
                     SizedBox(width: 8),
                     HomeContainers(
