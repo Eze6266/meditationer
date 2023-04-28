@@ -35,7 +35,7 @@ class VekstScreen extends StatelessWidget {
                     SizedBox(width: 5,),
                     Expanded(
                       child: Text(
-                        "Top 10 tracks to make you focus more",
+                        "Topp 10 lydspor for vekst",
                         style: TextStyle(fontSize: 19,letterSpacing: 2, color: Colors.black),
                       ),
                     ),
