@@ -35,7 +35,7 @@ class FocusScreen extends StatelessWidget {
                     SizedBox(width: 5,),
                     Expanded(
                       child: Text(
-                        "Topp 10 spor for å få deg til å fokusere mer",
+                        "Topp lydspor for å få deg til å fokusere mer",
                         style: TextStyle(fontSize: 19,letterSpacing: 2, color: Colors.black),
                       ),
                     ),
