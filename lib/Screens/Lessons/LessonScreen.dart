@@ -2,12 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meditation_app/Screens/Lessons/lessonProvider.dart';
 import 'package:meditation_app/Screens/Lessons/screen1.dart';
 import 'package:meditation_app/Screens/Lessons/screen2.dart';
+import 'package:meditation_app/Screens/Lessons/screen3.dart';
 import 'package:meditation_app/Screens/Lessons/screen4.dart';
 import 'package:meditation_app/Screens/lesson_details.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
+import 'package:provider/provider.dart';
 
 import '../MusicScreens/musicstress.dart';
 
@@ -19,23 +22,24 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
-  bool alle = true;
-  bool ming = false;
-  bool engste = false;
-  bool sove = false;
-  bool historie = false;
-  int screenNumber = 1;
+ 
+  
 
   
 
   @override
   Widget build(BuildContext context) {
+    final lessonProvider= Provider.of<LessonProvider>(context);
+    int screenNumber = lessonProvider.screenNumber ;
     Size size = MediaQuery.of(context).size;
     if (screenNumber == 1) {
       return Screen1();
     } else if (screenNumber == 2) {
       return Screen2();
-    } else if (screenNumber == 4) {
+    }else if(screenNumber==3){
+      return Screen3();
+    }
+     else if (screenNumber == 4) {
       return Screen4();
     }
     return SizedBox();

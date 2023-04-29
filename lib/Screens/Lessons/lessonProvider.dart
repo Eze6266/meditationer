@@ -22,6 +22,7 @@ class LessonProvider with ChangeNotifier {
         _ming=mingNew;
         _engste=engsteNew;
         _historie=historieNew;
+        _sove=soveNew;
         _screenNumber=screenNumberNew;
         notifyListeners();
       }

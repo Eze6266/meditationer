@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:meditation_app/Screens/Lessons/lessonProvider.dart';
 import 'package:provider/provider.dart';
 
-class Screen1 extends StatelessWidget {
-  const Screen1({super.key});
+class Screen3 extends StatelessWidget {
+  const Screen3({super.key});
 
   @override
   Widget build(BuildContext context) {
