@@ -4,6 +4,7 @@ import 'package:meditation_app/Auth/firebase_auth_services.dart';
 import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
 import 'package:meditation_app/Screens/Home/ScreensHandler.dart.dart';
+import 'package:meditation_app/Screens/Lessons/lessonProvider.dart';
 import 'package:meditation_app/Screens/LoginScreen.dart';
 import 'package:meditation_app/Screens/OnboardingScreen.dart';
 import 'package:meditation_app/Screens/SignUp.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UsernameProvider()),
+        ChangeNotifierProvider(create: (_)=>LessonProvider()),
         ChangeNotifierProvider(create: (_) => Navigation()),
       ],
       child: MaterialApp(
