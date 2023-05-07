@@ -6,8 +6,11 @@ import 'package:meditation_app/Screens/MusicScreens/whiteMusicPlayer.dart';
 // import 'package:relaxify/services/firestore_services.dart';
 
 
-class FocusScreen extends StatelessWidget {
-  const FocusScreen({super.key});
+class AudioListScreen extends StatelessWidget {
+   AudioListScreen({super.key, required this.text, required this.categoryName});
+
+   String text;
+   String categoryName;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class FocusScreen extends StatelessWidget {
                 'assets/medback.png'),
           )),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 28.0.w),
+            padding: EdgeInsets.symmetric(horizontal: 28.w),
             child: Column(
               children: [
                 SizedBox(
@@ -36,7 +39,7 @@ class FocusScreen extends StatelessWidget {
                     SizedBox(width: 5.w,),
                     Expanded(
                       child: Text(
-                        "Topp lydspor for å få deg til å fokusere mer",
+                        text,
                         style: TextStyle(fontSize: 19.sp,letterSpacing: 2, color: Colors.black),
                       ),
                     ),
@@ -66,7 +69,7 @@ class FocusScreen extends StatelessWidget {
                                 .map((DocumentSnapshot document) {
                               Map<String, dynamic> data =
                                   document.data() as Map<String, dynamic>;
-                              return data['category'] == "Focus"
+                              return data['category'] == categoryName
                                   ? ListTile(
                                     onTap: (){
                                       // incrementPlayCount(data['title']);

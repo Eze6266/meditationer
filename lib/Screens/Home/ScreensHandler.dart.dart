@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../Lessons/LessonScreen.dart';
-import '../Meditation/MeditationScreen.dart';
+import '../SleepMeditation/MeditationScreen.dart';
 import '../Profile/ProfileScreen.dart';
 import 'Home.dart';
 
@@ -87,83 +87,6 @@ class _ScreenHandlerState extends State<ScreenHandler> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class HomeContainers extends StatelessWidget {
-  HomeContainers({
-    super.key,
-    required this.imgUrl,
-    required this.categoryText,
-    required this.timeText,
-    required this.titleText,
-  });
-  String imgUrl;
-  String titleText;
-  String categoryText;
-  String timeText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          height: 113,
-          width: 155,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('$imgUrl'),
-              fit: BoxFit.contain,
-            ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
-        SizedBox(height: 8),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            '$titleText',
-            style: TextStyle(
-              fontFamily: 'HelveticaNeue',
-              color: Color(0xff3F414E),
-              fontSize: 18,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ),
-        SizedBox(height: 6),
-        Row(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '$categoryText',
-                style: TextStyle(
-                  fontFamily: 'HelveticaNeue',
-                  color: Color(0xffA1A4B2),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            SizedBox(width: 10),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '$timeText',
-                style: TextStyle(
-                  fontFamily: 'HelveticaNeue',
-                  color: Color(0xffA1A4B2),
-                  fontSize: 11,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meditation_app/Auth/firebase_auth_services.dart';
 import 'package:meditation_app/Auth/firestore_services.dart';
 import 'package:meditation_app/Screens/Home/Home.dart';
@@ -32,13 +33,13 @@ class _SignUpScreeState extends State<SignUpScree> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
+            padding: EdgeInsets.only(left: 10.w, right: 10.w),
             child: Form(
               key: _signUpKey,
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 10, top: 20),
+                    padding: EdgeInsets.only(left: 10.w, top: 20.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -65,24 +66,24 @@ class _SignUpScreeState extends State<SignUpScree> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 30.h),
                   Text(
                     'Lag Din Konto',
                     style: TextStyle(
                       color: Color(0xff3f414e),
                       fontWeight: FontWeight.w400,
-                      fontSize: 28,
+                      fontSize: 28.sp,
                       fontFamily: 'HelveticaNeue',
                     ),
                   ),
-                  SizedBox(height: 30),
-                  SizedBox(height: 10),
+                  SizedBox(height: 30.h),
+                  SizedBox(height: 10.h),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
                     width: 80 * size.width / 100,
-                    height: 70,
+                    height: 70.h,
                     child: TextFormField(
                       controller: usernameController,
                       validator: (value) {
@@ -101,7 +102,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                           'Brukernavn',
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'HelveticaNeue',
                             letterSpacing: 0.4,
@@ -110,7 +111,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color(0xfff2f3f7),
-                            width: 2,
+                            width: 2.w,
                           ),
                         ),
                         focusColor: Color.fromRGBO(25, 95, 167, 1),
@@ -126,13 +127,13 @@ class _SignUpScreeState extends State<SignUpScree> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
                     width: 80 * size.width / 100,
-                    height: 70,
+                    height: 70.h,
                     child: TextFormField(
                       controller: emailController,
                       validator: (value) {
@@ -153,7 +154,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                           'E - postadresse',
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'HelveticaNeue',
                             letterSpacing: 0.4,
@@ -178,13 +179,13 @@ class _SignUpScreeState extends State<SignUpScree> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
                     width: 80 * size.width / 100,
-                    height: 70,
+                    height: 70.h,
                     child: TextFormField(
                       controller: passwordController,
                       validator: (value) {
@@ -213,7 +214,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                           'Password',
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'HelveticaNeue',
                             letterSpacing: 0.4,
@@ -238,9 +239,9 @@ class _SignUpScreeState extends State<SignUpScree> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: EdgeInsets.symmetric(horizontal: 25.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -251,7 +252,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                               style: TextStyle(
                                 color: Color(0xffa1a4b2),
                                 fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontFamily: 'HelveticaNeue',
                               ),
                             ),
@@ -261,7 +262,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                               style: TextStyle(
                                 color: Color(0xff7583ca),
                                 fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                                fontSize: 14.sp,
                                 fontFamily: 'HelveticaNeue',
                               ),
                             ),
@@ -278,7 +279,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   GestureDetector(
                     onTap: () {
                       if (_signUpKey.currentState!.validate() &&
@@ -288,7 +289,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                       }
                     },
                     child: Container(
-                      height: 53,
+                      height: 53.h,
                       width: 78 * size.width / 100,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(38),
@@ -300,16 +301,16 @@ class _SignUpScreeState extends State<SignUpScree> {
                           style: TextStyle(
                             color: Color(0xfff6f1fb),
                             fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontFamily: 'HelveticaNeue',
                           ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 60),
+                  SizedBox(height: 60.h),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding:  EdgeInsets.symmetric(horizontal: 25.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -318,7 +319,7 @@ class _SignUpScreeState extends State<SignUpScree> {
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
                             fontWeight: FontWeight.w400,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontFamily: 'HelveticaNeue',
                           ),
                         ),

@@ -12,6 +12,7 @@ import 'package:meditation_app/Screens/WelcomeScreen.dart';
 import 'package:meditation_app/utils/usernameProvider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'Screens/SplashScreen.dart';
 import 'utils/navigation.dart';
@@ -37,13 +38,56 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   final bool isFirstTime;
 
   MyApp({required this.isFirstTime});
-  // This widget is the root of your application.
 
-  
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // This widget is the root of your application.
+  Future<void> preCacheImages ()async{
+    
+    await precacheImage(AssetImage("assets/home.png"), context);
+    await precacheImage(AssetImage("assets/fokus.png"), context);
+    await precacheImage(AssetImage("assets/yoga.png"), context);
+    await precacheImage(AssetImage("assets/angst.png"), context);
+    await precacheImage(AssetImage("assets/vek.png"), context);
+    await precacheImage(AssetImage("assets/medback.png"), context);
+    await precacheImage(AssetImage("assets/fan.png"), context);
+    await precacheImage(AssetImage("assets/sad.png"), context);
+    await precacheImage(AssetImage("assets/book.png"), context);
+    await precacheImage(AssetImage("assets/dagback.png"), context);
+    await precacheImage(AssetImage("assets/play.png"), context);
+    await precacheImage(AssetImage("assets/dagger.png"), context);
+    await precacheImage(AssetImage("assets/tree.png"), context);
+    await precacheImage(AssetImage("assets/dailyro.png"), context);
+    await precacheImage(AssetImage("assets/play2.png"), context);
+    await precacheImage(AssetImage("assets/spirit.png"), context);
+    await precacheImage(AssetImage("assets/for.png"), context);
+    await precacheImage(AssetImage("assets/dol.png"), context);
+    await precacheImage(AssetImage("assets/sunrise.png"), context);
+    await precacheImage(AssetImage("assets/stone.png"), context);
+    await precacheImage(AssetImage("assets/iron.png"), context);
+    await precacheImage(AssetImage("assets/dolphins.jpg"), context);
+    await precacheImage(AssetImage("assets/still_visualization.jpg"), context);
+    await precacheImage(AssetImage("assets/backdark.png"), context);
+    await precacheImage(AssetImage("assets/bird.png"), context);
+    await precacheImage(AssetImage("assets/cloud.png"), context);
+    await precacheImage(AssetImage("assets/birdsleep.png"), context);
+    await precacheImage(AssetImage("assets/moon.png"), context);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    preCacheImages();
+  }
+
   @override
   Widget build(BuildContext context) {
     
@@ -53,20 +97,23 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_)=>LessonProvider()),
         ChangeNotifierProvider(create: (_) => Navigation()),
       ],
-      child: MaterialApp(
-        routes: {
-          '/login': (context) => LoginScreen(),
-          '/signup': (context) => SignUpScree(),
-        },
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+      child: ScreenUtilInit(
+        builder: (context, child) => MaterialApp(
+          routes: {
+            '/login': (context) => LoginScreen(),
+            '/signup': (context) => SignUpScree(),
+          },
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: widget.isFirstTime
+              ? WelcomeScreen()
+              : FirebaseAuth.instance.currentUser != null
+                  ? ScreenHandler()
+                  : SignUpScree(),
         ),
-        home: isFirstTime
-            ? WelcomeScreen()
-            : FirebaseAuth.instance.currentUser != null
-                ? ScreenHandler()
-                : SignUpScree(),
+        designSize: const Size(428, 921),
       ),
     );
   }

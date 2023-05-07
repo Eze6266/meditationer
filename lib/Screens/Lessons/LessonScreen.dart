@@ -1,18 +1,16 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meditation_app/Screens/Lessons/lessonProvider.dart';
 import 'package:meditation_app/Screens/Lessons/screen1.dart';
 import 'package:meditation_app/Screens/Lessons/screen2.dart';
-import 'package:meditation_app/Screens/Lessons/screen3.dart';
 import 'package:meditation_app/Screens/Lessons/screen4.dart';
-import 'package:meditation_app/Screens/lesson_details.dart';
+import 'package:meditation_app/Screens/Lessons/Egen.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
-
-import '../MusicScreens/musicstress.dart';
 
 class LessonScreen extends StatefulWidget {
   const LessonScreen({super.key});
@@ -22,24 +20,16 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
- 
-  
-
-  
-
   @override
   Widget build(BuildContext context) {
-    final lessonProvider= Provider.of<LessonProvider>(context);
-    int screenNumber = lessonProvider.screenNumber ;
+    final lessonProvider = Provider.of<LessonProvider>(context);
+    int screenNumber = lessonProvider.screenNumber;
     Size size = MediaQuery.of(context).size;
     if (screenNumber == 1) {
       return Screen1();
     } else if (screenNumber == 2) {
       return Screen2();
-    }else if(screenNumber==3){
-      return Screen3();
-    }
-     else if (screenNumber == 4) {
+    } else if (screenNumber == 3) {
       return Screen4();
     }
     return SizedBox();
@@ -58,8 +48,8 @@ class HistorieContainers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
-      width: 150,
+      height: 180.h,
+      width: 150.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
@@ -68,7 +58,7 @@ class HistorieContainers extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: 12, bottom: 15),
+        padding: EdgeInsets.only(left: 12.w, bottom: 15.h),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,

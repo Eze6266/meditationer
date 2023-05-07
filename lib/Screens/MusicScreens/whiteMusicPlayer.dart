@@ -3,7 +3,9 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'package:audio_video_progress_bar/audio_video_progress_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WhiteMusicPlayer extends StatefulWidget {
   WhiteMusicPlayer(
@@ -43,46 +45,46 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
   int _satCount = 0;
   int _sunCount = 0;
 
-  // void _incrementCount(int day) async {
-  //   SharedPreferences _prefs = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     switch (day) {
-  //       case 1:
-  //         _monCount++;
-  //         _prefs.setInt('monCount', _monCount);
-  //         break;
-  //       case 2:
-  //         _tueCount++;
-  //         _prefs.setInt('tueCount', _tueCount);
-  //         break;
-  //       case 3:
-  //         _wedCount++;
-  //         _prefs.setInt('wedCount', _wedCount);
-  //         break;
-  //       case 4:
-  //         _thuCount++;
-  //         _prefs.setInt('thuCount', _thuCount);
-  //         break;
-  //       case 5:
-  //         _friCount++;
-  //         _prefs.setInt('friCount', _friCount);
-  //         break;
-  //       case 6:
-  //         _satCount++;
-  //         _prefs.setInt('satCount', _satCount);
-  //         break;
-  //       case 7:
-  //         _sunCount++;
-  //         _prefs.setInt('sunCount', _sunCount);
-  //         break;
-  //     }
-  //   });
-  // }
+  void _incrementCount(int day) async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    setState(() {
+      switch (day) {
+        case 1:
+          _monCount++;
+          _prefs.setInt('monCount', _monCount);
+          break;
+        case 2:
+          _tueCount++;
+          _prefs.setInt('tueCount', _tueCount);
+          break;
+        case 3:
+          _wedCount++;
+          _prefs.setInt('wedCount', _wedCount);
+          break;
+        case 4:
+          _thuCount++;
+          _prefs.setInt('thuCount', _thuCount);
+          break;
+        case 5:
+          _friCount++;
+          _prefs.setInt('friCount', _friCount);
+          break;
+        case 6:
+          _satCount++;
+          _prefs.setInt('satCount', _satCount);
+          break;
+        case 7:
+          _sunCount++;
+          _prefs.setInt('sunCount', _sunCount);
+          break;
+      }
+    });
+  }
 
   @override
   void initState() {
     super.initState();
-    // _incrementCount(DateTime.now().weekday);
+    _incrementCount(DateTime.now().weekday);
     _audioPlayer = AudioPlayer();
     audioCache = AudioCache(fixedPlayer: _audioPlayer);
     
@@ -168,7 +170,7 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 15, right: 10, left: 15),
+                padding: EdgeInsets.only(top: 15.h, right: 10.w, left: 15.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -197,33 +199,33 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
                   ],
                 ),
               ),
-              SizedBox(height: 100),
+              SizedBox(height: 100.h),
               Image(
-                width: 230,
-                height: 230,
+                width: 230.w,
+                height: 230.h,
                 image: AssetImage('assets/disc.png'),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 40.h),
               Text(
                 widget.title,
                 style: TextStyle(
-                  fontSize: 34,
+                  fontSize: 34.sp,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'HelveticaNeue',
                   color: Color(0xff3f414e),
                 ),
               ),
-              SizedBox(height: 12),
+              SizedBox(height: 12.sp),
               Text(
                 widget.category,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'HelveticaNeue',
                   color: Color(0xffa0a3b1),
                 ),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 35.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -237,7 +239,7 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
                       _isMuted?Icons.volume_off_rounded:Icons.volume_up_rounded,
                       color: Colors.black,
                     ),
-                    iconSize: 40,
+                    iconSize: 40.sp,
                   ),
                    _isPlaying
                         ? IconButton(
@@ -246,7 +248,7 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
                               Icons.pause,
                               color: Colors.black,
                             ),
-                            iconSize: 64.0,
+                            iconSize: 64.h,
                           )
                         : IconButton(
                             onPressed: _isPlaying ? null : _playAudio,
@@ -254,7 +256,7 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
                               Icons.play_arrow,
                               color: Colors.black,
                             ),
-                            iconSize: 64.0,
+                            iconSize: 64.h,
                           ),
                   IconButton(
                     onPressed: (){
@@ -266,11 +268,11 @@ class _WhiteMusicPlayerState extends State<WhiteMusicPlayer>
                       _isRepeating?Icons.repeat_one:Icons.repeat,
                       color: Colors.black,
                     ),
-                    iconSize: 40,
+                    iconSize: 40.h,
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: 10 * size.width / 100),

@@ -25,5 +25,83 @@ class Auth {
       SnackBar(content: Text("$e") );
     }
   }
+
+ 
+
+Future<void> changePassword(String newPassword, BuildContext context) async {
+  try {
+    // Get the currently logged in user
+    final User user = FirebaseAuth.instance.currentUser!;
+
+    // Update the user's password
+    await user.updatePassword(newPassword);
+
+    // Sign out the user after changing the password
+    await FirebaseAuth.instance.signOut();
+    
+  } on FirebaseAuthException catch (e) {
+    if (e.code == 'weak-password') {
+      
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "The password provided is too weak.",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFF44709A),
+            ),
+          ),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Color(0xFFD4E4F4),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              side: BorderSide(color: Color(0xFF53A3DA))),
+          margin: EdgeInsets.fromLTRB(20, 80, 20, 700),
+        ),
+      );
+    } else {
+      
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "Failed to change password: $e",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFF44709A),
+            ),
+          ),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Color(0xFFD4E4F4),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+              side: BorderSide(color: Color(0xFF53A3DA))),
+          margin: EdgeInsets.fromLTRB(20, 80, 20, 700),
+        ),
+      );
+    }
+  } catch (e) {
+    
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          "Failed to change password: $e",
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: Color(0xFF44709A),
+          ),
+        ),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Color(0xFFD4E4F4),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(color: Color(0xFF53A3DA))),
+        margin: EdgeInsets.fromLTRB(20, 80, 20, 700),
+      ),
+    );
+  }
+}
   
 }

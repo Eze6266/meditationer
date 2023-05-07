@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meditation_app/Screens/SignUp.dart';
 import 'package:page_animation_transition/animations/bottom_to_top_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
@@ -20,11 +21,11 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
+            padding: EdgeInsets.only(left: 10.w, right: 10.w),
             child: Column(
               children: [
                  Padding(
-                      padding: EdgeInsets.only(left: 10, top: 20),
+                      padding: EdgeInsets.only(left: 10.w, top: 20.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -51,13 +52,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                     ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 Text(
                   'Velkommen Tilbake!',
                   style: TextStyle(
                     color: Color(0xff3f414e),
                     fontWeight: FontWeight.w400,
-                    fontSize: 28,
+                    fontSize: 28.sp,
                     fontFamily: 'HelveticaNeue',
                   ),
                 ),
@@ -79,17 +80,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 //   borderColor: Colors.grey,
                 //   textColor: Colors.black,
                 // ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Padding(
-                  padding: EdgeInsets.only(left: 10, right: 10),
+                  padding: EdgeInsets.only(left: 10.w, right: 10.w),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
                     width: 80 * size.width / 100,
-                    height: 70,
+                    height: 70.h,
                     child: TextField(
                       cursorColor: Colors.black,
                       maxLines: null,
@@ -100,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           'E-postadresse',
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'HelveticaNeue',
                             letterSpacing: 0.4,
@@ -126,15 +127,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Padding(
-                  padding: EdgeInsets.only(left: 10, right: 10),
+                  padding: EdgeInsets.only(left: 10.w, right: 10.w),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                     ),
                     width: 80 * size.width / 100,
-                    height: 70,
+                    height: 70.h,
                     child: TextField(
                       cursorColor: Colors.black,
                       maxLines: null,
@@ -145,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           'Password',
                           style: TextStyle(
                             color: Color(0xffa1a4b2),
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
                             fontFamily: 'HelveticaNeue',
                             letterSpacing: 0.4,
@@ -159,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         focusColor: Color.fromRGBO(25, 95, 167, 1),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
+                          borderRadius: BorderRadius.circular(5.r),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -171,9 +172,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 Container(
-                  height: 53,
+                  height: 53.h,
                   width: 78 * size.width / 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(38),
@@ -185,27 +186,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                         color: Color(0xfff6f1fb),
                         fontWeight: FontWeight.w400,
-                        fontSize: 12,
+                        fontSize: 12.sp,
                         fontFamily: 'HelveticaNeue',
                       ),
                     ),
                   ),
                 ),
                
-                SizedBox(height: 60),
+                SizedBox(height: 60.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'HAR IKKE EN KONTO?',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontFamily: 'HelveticaNeue',
                         fontWeight: FontWeight.w400,
                         color: Color(0xffa1a4b2),
                       ),
                     ),
-                    SizedBox(width: 5),
+                    SizedBox(width: 5.w),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).popAndPushNamed("/signup");
@@ -213,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'MELDE DEG PÅ',
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontFamily: 'HelveticaNeue',
                           fontWeight: FontWeight.w400,
                           color: Colors.black,
@@ -251,27 +252,27 @@ class SignInWithFacebookButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 53,
+      height: 53.h,
       width: 78 * size.width / 100,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(38),
+        borderRadius: BorderRadius.circular(38.r),
         border: Border.all(color: borderColor),
         color: coloring,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(width: 20),
+          SizedBox(width: 20.w),
           Image(
             image: AssetImage('$imgUrl'),
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 20.w),
           Text(
             '$text',
             style: TextStyle(
               color: textColor,
               fontWeight: FontWeight.w400,
-              fontSize: 12,
+              fontSize: 12.sp,
               fontFamily: 'HelveticaNeue',
             ),
           ),

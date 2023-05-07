@@ -47,6 +47,9 @@ dependencies:
   cloud_firestore: ^4.5.2
   shared_preferences: ^2.1.0
   audioplayers: ^0.20.1
+  fl_chart: ^0.61.0
+  flutter_screenutil: ^5.7.0
+  flutter_launcher_icons: ^0.13.1
   
 
 dev_dependencies:
