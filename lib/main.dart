@@ -102,6 +102,7 @@ class _MyAppState extends State<MyApp> {
           routes: {
             '/login': (context) => LoginScreen(),
             '/signup': (context) => SignUpScree(),
+            '/main_home':(context) => ScreenHandler(),
           },
           title: 'Flutter Demo',
           theme: ThemeData(
